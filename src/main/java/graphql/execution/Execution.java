@@ -92,6 +92,7 @@ public class Execution {
                 .operationDefinition(operationDefinition)
                 .dataLoaderRegistry(executionInput.getDataLoaderRegistry())
                 .cacheControl(executionInput.getCacheControl())
+                .locale(executionInput.getLocale())
                 .build();
 
 
@@ -141,7 +142,7 @@ public class Execution {
         ExecutionStrategyParameters parameters = newParameters()
                 .executionStepInfo(executionStepInfo)
                 .source(root)
-                .localContext(executionContext.getContext())
+                .localContext(null) // this is important to default as this
                 .fields(fields)
                 .nonNullFieldValidator(nonNullableFieldValidator)
                 .path(path)
